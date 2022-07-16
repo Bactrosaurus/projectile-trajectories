@@ -1,7 +1,7 @@
 package de.daniel.trajectories.eventhandler
 
 import de.daniel.trajectories.data.ProjectileType
-import de.daniel.trajectories.extensions.getProjectileType
+import de.daniel.trajectories.extensions.projectileType
 import net.axay.kspigot.event.listen
 import net.axay.kspigot.runnables.taskRunLater
 import org.bukkit.entity.EntityType
@@ -21,7 +21,7 @@ object ItemSwitchHandler {
 
     private fun updatePlayerProjectileItem(player: Player) {
         taskRunLater(delay = 1) {
-            val projectileType = player.getProjectileType()
+            val projectileType = player.projectileType()
             if (projectileType == null) {
                 playerProjectileMap.remove(player)
                 return@taskRunLater
@@ -39,14 +39,17 @@ object ItemSwitchHandler {
             if (it.whoClicked.type != EntityType.PLAYER) return@listen
             updatePlayerProjectileItem(it.whoClicked as Player)
         }
+
         listen<InventoryDragEvent> {
             if (it.whoClicked.type != EntityType.PLAYER) return@listen
             updatePlayerProjectileItem(it.whoClicked as Player)
         }
+
         listen<ProjectileLaunchEvent> {
             if (it.entity.shooter !is Player) return@listen
             updatePlayerProjectileItem(it.entity.shooter as Player)
         }
+
         listen<EntityPickupItemEvent> {
             if (it.entityType != EntityType.PLAYER) return@listen
             updatePlayerProjectileItem(it.entity as Player)

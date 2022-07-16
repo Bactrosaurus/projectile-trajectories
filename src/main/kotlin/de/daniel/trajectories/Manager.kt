@@ -18,14 +18,12 @@ class InternalMainClass : KSpigot() {
 
     override fun startup() {
         ItemSwitchHandler.register()
-        executeTrajectoriesTask()
-    }
 
-    private fun executeTrajectoriesTask() {
         task(period = 1) {
             ItemSwitchHandler.playerProjectileMap.keys.forEach {
                 val projectileType = ItemSwitchHandler.playerProjectileMap[it] ?: return@forEach
                 val trajectory = TrajectoryCalculator.getTrajectory(it, projectileType)
+
                 TrajectoryRenderer.renderTrajectory(trajectory)
             }
         }
