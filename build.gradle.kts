@@ -1,8 +1,8 @@
 plugins {
-    kotlin("jvm") version "1.7.10"
-    id("io.papermc.paperweight.userdev") version "1.3.8"
-    id("xyz.jpenilla.run-paper") version "1.0.6"
-    id("net.minecrell.plugin-yml.bukkit") version "0.5.2"
+    kotlin("jvm") version "1.8.10"
+    id("io.papermc.paperweight.userdev") version "1.5.0"
+    id("xyz.jpenilla.run-paper") version "1.1.0"
+    id("net.minecrell.plugin-yml.bukkit") version "0.5.3"
 }
 
 group = "de.daniel"
@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    paperDevBundle("1.19.2-R0.1-SNAPSHOT")
+    paperDevBundle("1.19.3-R0.1-SNAPSHOT")
     implementation("net.axay:kspigot:1.19.0")
 }
 
@@ -25,7 +25,7 @@ tasks {
         kotlinOptions.jvmTarget = "17"
     }
     runServer {
-        minecraftVersion("1.19.2")
+        minecraftVersion("1.19.3")
     }
 }
 
