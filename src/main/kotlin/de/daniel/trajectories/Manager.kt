@@ -23,7 +23,6 @@ class InternalMainClass : KSpigot() {
             ItemSwitchHandler.playerProjectileMap.keys.forEach {
                 val projectileType = ItemSwitchHandler.playerProjectileMap[it] ?: return@forEach
                 val trajectory = TrajectoryCalculator.getTrajectory(it, projectileType)
-
                 TrajectoryRenderer.renderTrajectory(trajectory)
             }
         }

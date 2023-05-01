@@ -14,7 +14,7 @@ repositories {
 
 dependencies {
     paperweight.paperDevBundle("1.19.3-R0.1-SNAPSHOT")
-    implementation("net.axay:kspigot:1.19.0")
+    implementation("net.axay:kspigot:1.19.1")
 }
 
 tasks {
@@ -35,6 +35,6 @@ bukkit {
     main = "$group.trajectories.InternalMainClass"
     version = getVersion().toString()
     libraries = listOf(
-        "net.axay:kspigot:1.19.0"
+        "net.axay:kspigot:1.19.1"
     )
 }

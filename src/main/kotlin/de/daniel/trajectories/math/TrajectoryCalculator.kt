@@ -19,10 +19,13 @@ object TrajectoryCalculator {
         var ticksPassed = 0
         var hitResult: RayTraceResult? = null
 
-        while (true) {
+        var gravAccel = projectileType.gravAccel
+
+        while (ticksPassed < 100) {
             // Apply drag and gravity
             velocity.multiply(0.99)
-            velocity.y -= (projectileType.gravAccel * ((0.99).pow(ticksPassed + 1)))
+            velocity.y -= gravAccel
+            gravAccel *= 0.99
 
             if (velocity.length() <= 0) break
 

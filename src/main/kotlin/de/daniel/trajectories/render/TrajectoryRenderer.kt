@@ -14,7 +14,8 @@ object TrajectoryRenderer {
         trajectory: Trajectory,
         particleType: Particle = Particle.CRIT_MAGIC,
         drawCircle: Boolean = true,
-        circleRadius: Double = 1.0
+        circleRadius: Double = 1.0,
+        particleAmount: Int = 30
     ) {
         async {
             trajectory.locations.forEach {
@@ -23,17 +24,17 @@ object TrajectoryRenderer {
 
             if (trajectory.locations.size < 2 || !drawCircle) return@async
 
-            val particleAmount = 30
+            val lastLocation = trajectory.locations[trajectory.locations.size - 2]
 
             for (i in 0 until particleAmount) {
-                val angle = i * (2 * Math.PI) / particleAmount
+                val angle = i * 2 * Math.PI / particleAmount
 
                 val x = cos(angle) * circleRadius
                 val y = sin(angle) * circleRadius
 
                 val hitBlockFace = trajectory.hitResult?.hitBlockFace ?: return@async
 
-                val particleLocation = trajectory.locations[trajectory.locations.size - 2].clone()
+                val particleLocation = lastLocation.clone()
                     .add(hitBlockFace.xNormal().multiply(x))
                     .add(hitBlockFace.yNormal().multiply(y))
 
