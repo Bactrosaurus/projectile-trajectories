@@ -5,4 +5,4 @@ A Minecraft Paper plugin written in Kotlin that allows players to see the trajec
 The trajectory of a projectile in Minecraft with friction coefficient of $0.99/\frac{\text{1}}{\text{tick}}$ and
 initial velocity $v_0/\frac{\text{blocks}}{\text{tick}}$ with angle $\alpha/\degree$ and gravitational acceleration of $g/\frac{\text{blocks}}{\text{tick}^2}$ can be modeled by the following equation:
 
-$$y(x)=\dfrac{v\sin(\alpha) + 100g}{\ln(100)-\ln(99)}\cdot\ (1-0.99^{\dfrac{\ln\left(1-\dfrac{x(\ln(100)-\ln(99))}{v\cos(\alpha)}\right)}{\ln(0.99)}})-100g \cdot\ \dfrac{\ln\left(1-\dfrac{x(\ln(100)-\ln(99))}{v\cos(\alpha)}\right)}{\ln(0.99)}$$
+$$y(x)=\dfrac{v\sin(\alpha) + 100g}{\ln(100)-\ln(99)}\cdot\ (1-0.99^{\dfrac{\ln\left(1-x\cdot\dfrac{\ln(100)-\ln(99)}{v\cos(\alpha)}\right)}{\ln(0.99)}})-100g \cdot\ \dfrac{\ln\left(1-x\cdot\dfrac{\ln(100)-\ln(99)}{v\cos(\alpha)}\right)}{\ln(0.99)}$$
