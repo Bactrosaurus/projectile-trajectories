@@ -1,8 +1,8 @@
 plugins {
-    kotlin("jvm") version "1.8.10"
-    id("io.papermc.paperweight.userdev") version "1.5.0"
+    kotlin("jvm") version "1.9.22"
+    id("io.papermc.paperweight.userdev") version "1.5.11"
     id("xyz.jpenilla.run-paper") version "1.1.0"
-    id("net.minecrell.plugin-yml.bukkit") version "0.5.3"
+    id("net.minecrell.plugin-yml.bukkit") version "0.6.0"
 }
 
 group = "de.daniel"
@@ -13,8 +13,8 @@ repositories {
 }
 
 dependencies {
-    paperweight.paperDevBundle("1.19.3-R0.1-SNAPSHOT")
-    implementation("net.axay:kspigot:1.19.1")
+    paperweight.paperDevBundle("1.20.4-R0.1-SNAPSHOT")
+    implementation("net.axay:kspigot:1.20.3")
 }
 
 tasks {
@@ -25,16 +25,16 @@ tasks {
         kotlinOptions.jvmTarget = "17"
     }
     runServer {
-        minecraftVersion("1.19.3")
+        minecraftVersion("1.20.4")
     }
 }
 
 bukkit {
     name = "projectile-trajectories"
-    apiVersion = "1.19"
+    apiVersion = "1.20"
     main = "$group.trajectories.InternalMainClass"
     version = getVersion().toString()
     libraries = listOf(
-        "net.axay:kspigot:1.19.1"
+        "net.axay:kspigot:1.20.3"
     )
 }

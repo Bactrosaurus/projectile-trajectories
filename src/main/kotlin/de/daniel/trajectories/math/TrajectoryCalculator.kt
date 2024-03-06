@@ -12,20 +12,16 @@ import kotlin.math.pow
 object TrajectoryCalculator {
 
     fun getTrajectory(player: Player, projectileType: ProjectileType): Trajectory {
-        val location = player.eyeLocation.subtract(0.0, 0.1, 0.0)
+        val location = player.location.add(0.0, 1.62-0.10000000149011612, 0.0)
         val velocity = location.direction.multiply(projectileType.initVelocity)
         val trajectoryLocations = mutableListOf<Location>()
 
-        var ticksPassed = 0
         var hitResult: RayTraceResult? = null
 
-        var gravAccel = projectileType.gravAccel
-
-        while (ticksPassed < 100) {
+        for (ticksPassed in 0..100) {
             // Apply drag and gravity
             velocity.multiply(0.99)
-            velocity.y -= gravAccel
-            gravAccel *= 0.99
+            velocity.y -= projectileType.gravAccel
 
             if (velocity.length() <= 0) break
 
@@ -45,8 +41,6 @@ object TrajectoryCalculator {
                 trajectoryLocations.add(hitResult.hitPosition.toLocation(player.world))
                 break
             }
-
-            ticksPassed++
         }
 
         return Trajectory(player, trajectoryLocations, hitResult)

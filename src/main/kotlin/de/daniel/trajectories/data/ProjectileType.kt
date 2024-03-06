@@ -9,9 +9,9 @@ enum class ProjectileType(val initVelocity: Double, val gravAccel: Double) {
     ENDER_PEARL(1.5, 0.03),
     SNOWBALL(1.5, 0.03),
     EGG(1.5, 0.03),
-    BOW(3.0, 0.05),
-    TRIDENT(3.0, 0.05),
-    CROSSBOW(3.15, 0.05);
+    BOW(3.0, 0.05000000074505806),
+    TRIDENT(2.5, 0.05000000074505806),
+    CROSSBOW(3.15, 0.05000000074505806);
 
     companion object {
         fun getPlayerProjectileTypeFromMaterial(material: Material): ProjectileType? {
