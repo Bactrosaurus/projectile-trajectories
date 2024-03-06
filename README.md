@@ -5,7 +5,11 @@ A Minecraft Paper plugin written in Kotlin that allows players to see the trajec
 ## Mathematics of projectiles in Minecraft
 
 The motion of projectiles in Minecraft is made up like this:
-1. There's an initial velocity to a projectile (varies from type of projectile)
+1. There's an initial velocity to a projectile:
+   - Enderpearl, Snowball, Egg: 1.5
+   - Bow, fully charged: 3.0
+   - Trident, fully charged, unenchanted: 2.5
+   - Crossbow: 3.15
 2. Every tick, the projectile's velocity vector get's multiplied by a drag coefficient 0.99
 3. When the projectile is in water however, velocity of throwable projectiles (enderpearl, egg, snowball, experience bottle, potion) get's multiplied by 0.8 every tick, velocity of arrows gets multiplied by 0.6 every tick and velocity of tridents gets multiplied by 0.99 every tick
 4. After drag has been applied, the gravitational acceleration is subtracted from the y-Component of the velocity vector every tick. Enderpearls, eggs and snowballs have a grvitational acceleration of 0.03. Thrown potions have a gravitational acceleration of 0.05 and experience bottles of 0.07. Arrows and tridents have a gravitational acceleration of 0.05000000074505806. This is the same in water and in air.
