@@ -40,3 +40,5 @@ The trajectory of a projectile in Minecraft with friction coefficient of $0.99/\
 initial velocity $v_0/\frac{\text{blocks}}{\text{tick}}$ with angle $\alpha/\degree$ and gravitational acceleration of $g/\frac{\text{blocks}}{\text{tick}^2}$ can therefore be modeled by the following equation:
 
 $$y(x)=\dfrac{v_0\sin(\alpha) + 100g}{\ln(100)-\ln(99)}\cdot\ (1-0.99^{\dfrac{\ln\left(1-x\cdot\dfrac{\ln(100)-\ln(99)}{v_0\cos(\alpha)}\right)}{\ln(0.99)}})-100g \cdot\ \dfrac{\ln\left(1-x\cdot\dfrac{\ln(100)-\ln(99)}{v_0\cos(\alpha)}\right)}{\ln(0.99)}$$
+
+Here's a simulation of this graph where you can adjust the values: https://www.geogebra.org/calculator/awvet877
