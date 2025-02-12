@@ -40,17 +40,23 @@ $$d_y(t)=\dfrac{v_0\sin(\alpha) + 100g}{\ln(100)-\ln(99)}\cdot\ (1-0.99^t)-100gt
 
 We now solve for $t$ in the $d_x(t)$ equation:
 
-![eqn (1)](https://github.com/user-attachments/assets/5c68f559-863d-4456-a7d5-e04c0600c3d7)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5c68f559-863d-4456-a7d5-e04c0600c3d7" />
+</p>
 
 Now we can substitute $t$ in the equation for $d_y(t)$.
 
 The trajectory of a projectile in Minecraft with friction coefficient of $0.99/\frac{\text{1}}{\text{tick}}$ and
 initial velocity $v_0/\frac{\text{blocks}}{\text{tick}}$ with angle $\alpha/\degree$ and gravitational acceleration of $g/\frac{\text{blocks}}{\text{tick}^2}$ can therefore be modeled by the following equation:
 
-![eqn](https://github.com/user-attachments/assets/90f90705-a870-4f11-906d-dd858ef0584b)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/90f90705-a870-4f11-906d-dd858ef0584b" />
+</p>
 
 Or alternatively:
 
-![Tex2Img_1739310920](https://github.com/user-attachments/assets/03b06581-fad4-49cc-ae6d-c424aacf6ccd)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/03b06581-fad4-49cc-ae6d-c424aacf6ccd" />
+</p>
 
 Here's a simulation of this graph where you can adjust the values: https://www.geogebra.org/calculator/awvet877
